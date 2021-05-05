@@ -1,0 +1,48 @@
+.about-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 0;
+
+  img {
+    height: auto;
+    max-width: 15rem;
+    border-radius: 50%;
+  }
+
+  .about-title {
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h2 {
+      margin: 0;
+      font-weight: 300;
+      font-size: 1.2em;
+      color: #333;
+      text-transform: uppercase;
+    }
+
+    h3 {
+      margin: 0;
+      font-weight: 200;
+      font-size: 0.85em;
+      color: #ccc;
+      text-transform: uppercase;
+    }
+
+    .post-tag {
+      cursor: pointer;
+      transition-duration: 300ms;
+
+      &:hover {
+        color: #333;
+      }
+    }
+  }
+
+  .about-body {
+    max-width: 80%;
+  }
+}

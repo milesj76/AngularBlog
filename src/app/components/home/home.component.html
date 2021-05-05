@@ -1,0 +1,17 @@
+<div class="home-container">
+    <img src={{post.image}} alt="Generated Image from Picsum" (click)="onLoadPostClick()"/>
+
+    <div class="home-title">
+        <h2 (click)="onLoadPostClick()">{{ post.title }}</h2>
+        <h3>{{ post.date.toDateString() }} in <span class="home-tag">{{ post.tags[0] }}</span></h3>
+    </div>
+
+    <div class="home-body">
+        <p>
+            {{ post.body.substr(0, 500) + '....' }}
+        </p>
+        <div class="home-title">
+            <h3><span class="home-tag" (click)="onLoadPostClick()">read more</span></h3>
+        </div>
+    </div>
+</div>

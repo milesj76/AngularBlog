@@ -1,0 +1,43 @@
+<div class="app-container">
+
+    <header>
+        <div class="header-title"><h1>Notes and Things</h1></div>
+        <div class="header-links">
+            <p (click)="selectHome()">HOME</p>
+            <p (click)="selectAbout()">ABOUT</p>
+        </div>
+    </header>
+
+    <!-- Page Body content -->
+    <section [ngSwitch]="viewSelection" class="home-view app-column-center">
+        <!-- <div *ngSwitchCase="'home'"> -->
+            <!-- This loads up to 5 recent posts -->
+            <!-- <app-home [post]="testPosts[0]" (loadPost)="onLoadPost(testPosts[0])"></app-home> -->
+            <!-- <app-home [post]="testPosts[1]" (loadPost)="onLoadPost(testPosts[1])"></app-home> -->
+            <!-- <app-home [post]="testPosts[2]" (loadPost)="onLoadPost(testPosts[2])"></app-home> -->
+        <!-- </div> -->
+
+        <div *ngSwitchCase="'home'">
+            <!-- This loads up to 5 recent posts -->
+            <div *ngFor="let post of testPosts">
+                <app-home [post]="post" (loadPost)="onLoadPost(post)"></app-home>
+            </div>
+        </div>
+
+        <app-about *ngSwitchCase="'about'"></app-about>
+        <app-post *ngSwitchCase="'post'" [post]="selectedPost"></app-post>
+        <div *ngSwitchDefault>There was a problem loading the page.</div>
+    </section>
+
+    <footer>
+        <div class="footer-buttons">
+            <a mat-icon-button href="#"><mat-icon>facebook</mat-icon></a>
+            <a mat-icon-button href="#"><mat-icon>grade</mat-icon></a>
+            <a mat-icon-button href="#"><mat-icon>email</mat-icon></a>
+        </div>
+        <p>
+            Site made using Angular
+        </p>
+    </footer>
+
+</div>
